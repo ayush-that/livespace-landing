@@ -4,7 +4,6 @@ interface TestimonialProps {
   quote: string;
   name: string;
   role: string;
-  avatar: string;
 }
 
 const testimonials: TestimonialProps[] = [
@@ -12,42 +11,30 @@ const testimonials: TestimonialProps[] = [
     quote: "Using this digital payment bank has transformed how I manage my money. The app is intuitive, and transfers are instant!",
     name: "Chanuka Saranga",
     role: "Designer",
-    avatar: "/story/avatar1.png",
   },
   {
     quote: "I've tried many design apps, but Interior AI Generate is on a whole new level! This app makes it so easy to reimagine any room in my home. The AI suggestions are incredibly creative and feel like they're crafted by a professional designer!",
     name: "Hiran Amarjit",
     role: "Designer",
-    avatar: "/story/avatar2.png",
   },
   {
     quote: "I've tried many design apps, but Interior AI Generate is on a whole new level! This app makes it so easy to reimagine any room in my home. The AI suggestions are incredibly creative and feel like they're crafted by a professional designer!",
     name: "Chamuditha Jayood",
     role: "Designer",
-    avatar: "/story/avatar3.png",
   },
 ];
 
-const Testimonial = ({ quote, name, role, avatar }: TestimonialProps) => (
-  <div className="bg-white rounded-3xl p-8 shadow-sm">
+const Testimonial = ({ quote, name, role }: TestimonialProps) => (
+  <div className="bg-white rounded-3xl p-8 shadow-sm h-full">
     <div className="mb-6">
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
         <path d="M10 8L4 16H10V24H2V16L8 8H10ZM24 8L18 16H24V24H16V16L22 8H24Z" fill="#E5E7EB"/>
       </svg>
     </div>
     <p className="text-gray-600 mb-6 text-lg leading-relaxed">{quote}</p>
-    <div className="flex items-center gap-3">
-      <Image
-        src={avatar}
-        alt={name}
-        width={40}
-        height={40}
-        className="rounded-full"
-      />
-      <div>
-        <h4 className="font-medium">{name}</h4>
-        <p className="text-sm text-gray-600">{role}</p>
-      </div>
+    <div>
+      <h4 className="font-medium">{name}</h4>
+      <p className="text-sm text-gray-600">{role}</p>
     </div>
   </div>
 );
@@ -73,9 +60,11 @@ export default function StorySection() {
             </h2>
 
             {/* Testimonials Grid */}
-            <div className="grid gap-6 lg:translate-x-8">
+            <div className="flex flex-col lg:flex-row gap-6 lg:translate-x-8 -mr-[32rem] lg:w-[200%]">
               {testimonials.map((testimonial, index) => (
-                <Testimonial key={index} {...testimonial} />
+                <div key={index} className="flex-1 min-w-0">
+                  <Testimonial {...testimonial} />
+                </div>
               ))}
             </div>
           </div>
