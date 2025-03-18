@@ -1,0 +1,98 @@
+import Image from "next/image";
+
+interface TestimonialProps {
+  quote: string;
+  name: string;
+  role: string;
+  avatar: string;
+}
+
+const testimonials: TestimonialProps[] = [
+  {
+    quote: "Using this digital payment bank has transformed how I manage my money. The app is intuitive, and transfers are instant!",
+    name: "Chanuka Saranga",
+    role: "Designer",
+    avatar: "/story/avatar1.png",
+  },
+  {
+    quote: "I've tried many design apps, but Interior AI Generate is on a whole new level! This app makes it so easy to reimagine any room in my home. The AI suggestions are incredibly creative and feel like they're crafted by a professional designer!",
+    name: "Hiran Amarjit",
+    role: "Designer",
+    avatar: "/story/avatar2.png",
+  },
+  {
+    quote: "I've tried many design apps, but Interior AI Generate is on a whole new level! This app makes it so easy to reimagine any room in my home. The AI suggestions are incredibly creative and feel like they're crafted by a professional designer!",
+    name: "Chamuditha Jayood",
+    role: "Designer",
+    avatar: "/story/avatar3.png",
+  },
+];
+
+const Testimonial = ({ quote, name, role, avatar }: TestimonialProps) => (
+  <div className="bg-white rounded-3xl p-8 shadow-sm">
+    <div className="mb-6">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M10 8L4 16H10V24H2V16L8 8H10ZM24 8L18 16H24V24H16V16L22 8H24Z" fill="#E5E7EB"/>
+      </svg>
+    </div>
+    <p className="text-gray-600 mb-6 text-lg leading-relaxed">{quote}</p>
+    <div className="flex items-center gap-3">
+      <Image
+        src={avatar}
+        alt={name}
+        width={40}
+        height={40}
+        className="rounded-full"
+      />
+      <div>
+        <h4 className="font-medium">{name}</h4>
+        <p className="text-sm text-gray-600">{role}</p>
+      </div>
+    </div>
+  </div>
+);
+
+export default function StorySection() {
+  return (
+    <section className="w-full py-20 bg-gradient-to-br from-purple-50/50 to-transparent overflow-visible">
+      <div className="w-full max-w-7xl mx-auto px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Left Content */}
+          <div className="relative z-10">
+            {/* Header */}
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-2 h-2 rounded-full bg-[#FF8A9B]" />
+              <span className="text-gray-600">Success Stories</span>
+            </div>
+
+            {/* Title */}
+            <h2 className="text-[2.75rem] font-medium leading-tight mb-12">
+              What Our Clients Have to
+              <br />
+              Say about <span className="text-[#FF8A9B]">Livespace</span>
+            </h2>
+
+            {/* Testimonials Grid */}
+            <div className="grid gap-6 lg:translate-x-8">
+              {testimonials.map((testimonial, index) => (
+                <Testimonial key={index} {...testimonial} />
+              ))}
+            </div>
+          </div>
+
+          {/* Right Image */}
+          <div className="relative lg:-ml-24">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
+              <Image
+                src="/story/story.png"
+                alt="Success Story"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

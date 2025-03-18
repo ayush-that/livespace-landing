@@ -1,16 +1,6 @@
 import Image from "next/image";
 
-const testimonials = [
-  { id: 1, image: "/ai/avatar1.png" },
-  { id: 2, image: "/ai/avatar2.png" },
-  { id: 3, image: "/ai/avatar3.png" },
-  { id: 4, image: "/ai/avatar4.png" },
-  { id: 5, image: "/ai/avatar5.png" },
-  { id: 6, image: "/ai/avatar6.png" },
-  { id: 7, image: "/ai/avatar7.png" },
-  { id: 8, image: "/ai/avatar8.png" },
-  { id: 9, image: "/ai/avatar9.png" },
-];
+
 
 export default function AIPrecisionSection() {
   return (
@@ -68,24 +58,6 @@ export default function AIPrecisionSection() {
                 every detail, visualize instantly, and make it truly yours. With
                 LiveSpace, you call the shots in your own space!
               </p>
-            </div>
-
-            {/* Testimonial Avatars */}
-            <div className="flex -space-x-3 overflow-hidden">
-              {testimonials.map((testimonial) => (
-                <div
-                  key={testimonial.id}
-                  className="inline-block h-12 w-12 rounded-full ring-4 ring-[#1E1E1E]"
-                >
-                  <Image
-                    src={testimonial.image}
-                    alt={`User ${testimonial.id}`}
-                    width={48}
-                    height={48}
-                    className="h-12 w-12 rounded-full object-cover"
-                  />
-                </div>
-              ))}
             </div>
           </div>
         </div>

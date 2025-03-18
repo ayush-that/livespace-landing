@@ -85,10 +85,7 @@ export default function FeatureSection() {
               height={361}
               className="w-full h-auto"
             />
-            <div className="absolute bottom-0 left-0 right-0 p-4">
-              <p className="text-sm font-medium">Modern Wood Style</p>
-              <p className="text-xs text-gray-600">Minimal, sophisticated and marble effect tiles</p>
-            </div>
+            
           </div>
         </div>
 

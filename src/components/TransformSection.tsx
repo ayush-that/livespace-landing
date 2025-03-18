@@ -29,7 +29,7 @@ export default function TransformSection() {
         </div>
 
         {/* Right Image */}
-        <div className="relative aspect-[16/9] rounded-3xl overflow-hidden bg-white">
+        <div className="relative overflow-hidden bg-white">
           <Image
             src="/transform/right.png"
             alt="Before and After Transformation"
@@ -37,11 +37,7 @@ export default function TransformSection() {
             height={400}
             className="w-full h-full object-cover"
           />
-          {/* Three Vertical Lines */}
-          <div className="absolute inset-0 flex justify-between">
-            <div className="w-[1px] h-full bg-white/80 mx-[33%]"></div>
-            <div className="w-[1px] h-full bg-white/80"></div>
-          </div>
+        
         </div>
       </div>
     </section>
