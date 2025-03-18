@@ -14,7 +14,16 @@ export default function HeroSection() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-            Turn Your Designs into Revenue and Recognition
+            Turn Your Designs into{" "}
+            <span className="relative inline-block">
+              Revenue
+              <span className="absolute -bottom-1 sm:-bottom-1.5 left-0 right-0 h-0.5 sm:h-1 bg-[#FF8A9B] rounded-full"></span>
+            </span>{" "}
+            and{" "}
+            <span className="relative inline-block">
+              Recognition
+              <span className="absolute -bottom-1 sm:-bottom-1.5 left-0 right-0 h-0.5 sm:h-1 bg-[#FF8A9B] rounded-full"></span>
+            </span>
           </h1>
 
           <p className="text-gray-600 text-base sm:text-lg">

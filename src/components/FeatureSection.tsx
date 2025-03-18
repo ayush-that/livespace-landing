@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Grid3X3, ShoppingCart, Coins, Users } from "lucide-react";
 
 const FeatureCard = ({
   icon,
@@ -11,7 +12,7 @@ const FeatureCard = ({
   description: string;
   className?: string;
 }) => (
-  <div className={`${className}`}>
+  <div className={`h-full ${className}`}>
     <div className="flex items-center gap-3 mb-4">
       {icon}
       <h3 className="text-xl font-medium">{title}</h3>
@@ -35,16 +36,14 @@ export default function FeatureSection() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 h-full">
         {/* Left Column */}
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-12 h-full">
           <FeatureCard
             className="bg-purple-50/60 rounded-3xl p-8"
             icon={
               <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center">
-                <svg className="w-6 h-6 text-purple-600" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M4 16v4h4v-4H4zm10 0v4h4v-4h-4zm-10-6v4h4v-4H4zm10 0v4h4v-4h-4zM4 4v4h4V4H4zm10 0v4h4V4h-4z"/>
-                </svg>
+                <Grid3X3 className="w-6 h-6 text-purple-600" />
               </div>
             }
             title="Build Your Portfolio Instantly"
@@ -54,9 +53,7 @@ export default function FeatureSection() {
             className="bg-purple-50/60 rounded-3xl p-8"
             icon={
               <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center">
-                <svg className="w-6 h-6 text-purple-600" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17 2H7c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H7V4h10v16zm-1-7h-3V8h-2v5H8l4 4 4-4z"/>
-                </svg>
+                <ShoppingCart className="w-6 h-6 text-purple-600" />
               </div>
             }
             title="E-commerce Ready"
@@ -65,45 +62,48 @@ export default function FeatureSection() {
         </div>
 
         {/* Center Column - Image */}
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center">
-              <svg className="w-6 h-6 text-purple-600" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
-              </svg>
+        <div className="flex flex-col gap-4 h-full">
+          <div className="bg-gradient-to-br from-purple-100 to-pink-100/60 rounded-3xl p-8 flex flex-col gap-4 h-full">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center">
+                <Coins className="w-6 h-6 text-purple-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-medium">
+                  Monetize with AI Technology
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Profitable automation using AI solutions.
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-xl font-medium">Monetize with AI Technology</h3>
-              <p className="text-gray-600 text-sm">Profitable automation using AI solutions.</p>
+            <div className="relative rounded-2xl overflow-hidden bg-white flex-grow mt-2">
+              <Image
+                src="/feature/image.png"
+                alt="Modern Wood Style"
+                width={494}
+                height={361}
+                className="w-full h-full object-cover"
+              />
             </div>
-          </div>
-          <div className="relative rounded-3xl overflow-hidden bg-white">
-            <Image
-              src="/feature/image.png"
-              alt="Modern Wood Style"
-              width={494}
-              height={361}
-              className="w-full h-auto"
-            />
-            
           </div>
         </div>
 
         {/* Right Column */}
-        <FeatureCard
-          className="bg-red-50/50 rounded-3xl p-8"
-          icon={
-            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center">
-              <svg className="w-6 h-6 text-red-400" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16.5 12c1.38 0 2.5-1.12 2.5-2.5S17.88 7 16.5 7 14 8.12 14 9.5s1.12 2.5 2.5 2.5zm0-3.5c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/>
-              </svg>
-            </div>
-          }
-          title="Connect Locally with Clients"
-          description="Connect with local clients to build trust and strong relationships. Engage with nearby customers for better communication and personalized service.
+        <div className="h-full">
+          <FeatureCard
+            className="bg-red-50/50 rounded-3xl p-8 h-full"
+            icon={
+              <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center">
+                <Users className="w-6 h-6 text-red-400" />
+              </div>
+            }
+            title="Connect Locally with Clients"
+            description="Connect with local clients to build trust and strong relationships. Engage with nearby customers for better communication and personalized service.
 
 Strengthening local connections enhances credibility, boosts loyalty, and creates valuable growth opportunities within your community."
-        />
+          />
+        </div>
       </div>
     </section>
   );
