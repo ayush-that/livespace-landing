@@ -2,6 +2,9 @@ import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import FeatureSection from "@/components/FeatureSection";
 import TransformSection from "@/components/TransformSection";
+import PathwaySection from "@/components/PathwaySection";
+import AIPrecisionSection from "@/components/AIPrecisionSection";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -32,6 +35,15 @@ export default function Home() {
 
       {/* Transform Section */}
       <TransformSection />
+
+      {/* Pathway Section */}
+      <PathwaySection />
+
+      {/* AI Precision Section */}
+      <AIPrecisionSection />
+
+      {/* Newsletter Section */}
+      <Newsletter />
 
       {/* Footer */}
       <Footer />
