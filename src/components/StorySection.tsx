@@ -41,9 +41,9 @@ const Testimonial = ({ quote, name, role }: TestimonialProps) => (
 
 export default function StorySection() {
   return (
-    <section className="w-full py-20 bg-gradient-to-br from-purple-50/50 to-transparent overflow-visible">
-      <div className="w-full max-w-7xl mx-auto px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <section className="w-full py-20 bg-gradient-to-br from-purple-50/50 to-transparent overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-2 sm:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left Content */}
           <div className="relative z-10">
             {/* Header */}
@@ -53,16 +53,17 @@ export default function StorySection() {
             </div>
 
             {/* Title */}
-            <h2 className="text-[2.75rem] font-medium leading-tight mb-12">
+            <h2 className="text-2xl sm:text-[2.75rem] font-medium leading-tight mb-8 sm:mb-12">
               What Our Clients Have to
-              <br />
+              <br className="hidden sm:block" />
               Say about <span className="text-[#FF8A9B]">Livespace</span>
             </h2>
 
             {/* Testimonials Grid */}
-            <div className="flex flex-col lg:flex-row gap-6 lg:translate-x-8 -mr-[32rem] lg:w-[200%]">
+            <div className="flex flex-col gap-4 sm:gap-6 overflow-x-auto no-scrollbar
+                          lg:flex-row lg:translate-x-8 lg:-mr-[32rem] lg:w-[200%]">
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="flex-1 min-w-0">
+                <div key={index} className="flex-shrink-0 w-full lg:flex-1 lg:min-w-0">
                   <Testimonial {...testimonial} />
                 </div>
               ))}
@@ -70,7 +71,7 @@ export default function StorySection() {
           </div>
 
           {/* Right Image */}
-          <div className="relative lg:-ml-24">
+          <div className="relative mt-8 lg:mt-0 lg:-ml-24">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
               <Image
                 src="/story/story.png"
