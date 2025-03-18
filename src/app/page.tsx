@@ -1,6 +1,8 @@
 import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import FeatureSection from "@/components/FeatureSection";
+import TransformSection from "@/components/TransformSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -27,6 +29,12 @@ export default function Home() {
 
       {/* Feature Section */}
       <FeatureSection />
+
+      {/* Transform Section */}
+      <TransformSection />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
