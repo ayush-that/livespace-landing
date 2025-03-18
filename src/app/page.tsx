@@ -1,11 +1,12 @@
 import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
+import FeatureSection from "@/components/FeatureSection";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="flex items-center justify-between w-full max-w-7xl mx-auto px-4 py-4">
+      <nav className="relative flex items-center justify-between w-full max-w-7xl mx-auto px-4 py-4">
         <Image
           src="/hero-section/logo.svg"
           alt="Livespace Logo"
@@ -23,6 +24,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Feature Section */}
+      <FeatureSection />
     </div>
   );
 }
