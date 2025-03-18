@@ -3,7 +3,6 @@ import Image from "next/image";
 export default function CommunitySection() {
   return (
     <section className="w-full relative py-20">
-      {/* Background Image */}
       <div className="absolute inset-0 w-full h-min">
         <Image
           src="/round/round.png"
