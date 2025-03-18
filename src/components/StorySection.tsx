@@ -47,13 +47,13 @@ export default function StorySection() {
           {/* Left Content */}
           <div className="relative z-10">
             {/* Header */}
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-6 ml-2">
               <div className="w-2 h-2 rounded-full bg-[#FF8A9B]" />
               <span className="text-gray-600">Success Stories</span>
             </div>
 
             {/* Title */}
-            <h2 className="text-2xl sm:text-[2.75rem] font-medium leading-tight mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-[2.75rem] font-medium leading-tight mb-10 sm:mb-14 ml-2">
               What Our Clients Have to
               <br className="hidden sm:block" />
               Say about <span className="text-[#FF8A9B]">Livespace</span>
